@@ -1,0 +1,97 @@
+type FastFoodDataType = {
+    id: number;
+    image: string;
+    price: number;
+    title: string;
+    weight: number;
+    category: 'Бургеры' | 
+        'Закуски' | 'Хот-доги' | 
+        'Комбо' | 'Шаурма' | 
+        'Пицца' | 'Вок' | 
+        'Десерты';
+}
+
+const fastFoodData: FastFoodDataType[] = [
+    { id: 1, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 689, title: 'Мясная бомба', weight: 520, category: 'Бургеры' },
+    { id: 2, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 499, title: 'Классический бургер', weight: 450, category: 'Бургеры' },
+    { id: 3, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 729, title: 'Острый бургер', weight: 500, category: 'Бургеры' },
+    { id: 4, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 799, title: 'Двойной чизбургер', weight: 550, category: 'Бургеры' },
+    { id: 5, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 679, title: 'Бургер с грибами', weight: 480, category: 'Бургеры' },
+    { id: 6, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 739, title: 'Бекон бургер', weight: 520, category: 'Бургеры' },
+    { id: 7, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 619, title: 'Вегетарианский бургер', weight: 450, category: 'Бургеры' },
+    { id: 8, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 599, title: 'Чикен бургер', weight: 430, category: 'Бургеры' },
+    { id: 9, image: 'https://img.goodfon.com/wallpaper/big/c/74/eda-fast-fud-chizburger-bekon.webp', price: 649, title: 'Фиш бургер', weight: 440, category: 'Бургеры' },
+    { id: 10, image: 'https://images.gastronom.ru/7VdpVHSwjxnwpBj_xVRltf5j8cXREPNgtRjjZTPGeEs/pr:recipe-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzBkOGRjYzNlLWY5NDEtNDI5MS05MTM2LTNhN2VkOTA0NmFmMy5qcGc', price: 199, title: 'Картофель фри', weight: 150, category: 'Закуски' },
+    { id: 11, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 249, title: 'Луковые кольца', weight: 180, category: 'Закуски' },
+    { id: 12, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 229, title: 'Наггетсы куриные', weight: 200, category: 'Закуски' },
+    { id: 13, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 279, title: 'Сырные палочки', weight: 200, category: 'Закуски' },
+    { id: 14, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 189, title: 'Кола 0.5 л', weight: 500, category: 'Закуски' },
+    { id: 15, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 189, title: 'Фанта 0.5 л', weight: 500, category: 'Закуски' },
+    { id: 16, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 229, title: 'Спрайт 0.5 л', weight: 500, category: 'Закуски' },
+    { id: 17, image: 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://bolshoi.shato55.ru/wp-content/uploads/2021/05/ruletiki-iz-baklazhanov-s-syrom-kremette-i-orehovoj-pastoj-2-01-sajt.jpg', price: 189, title: 'Апельсиновый сок', weight: 500, category: 'Закуски' },
+    { id: 18, image: 'https://img.freepik.com/premium-photo/delicious-grilled-hotdog-restaurant-homemade-sausage-wrapped-hot-dogs-with-cheese-corn-banner-menu-recipe-place-text-top-view_114941-2399.jpg', price: 299, title: 'Классический хот-дог', weight: 300, category: 'Хот-доги' },
+    { id: 19, image: 'https://img.freepik.com/premium-photo/delicious-grilled-hotdog-restaurant-homemade-sausage-wrapped-hot-dogs-with-cheese-corn-banner-menu-recipe-place-text-top-view_114941-2399.jpg', price: 349, title: 'Хот-дог с сыром', weight: 320, category: 'Хот-доги' },
+    { id: 20, image: 'https://img.freepik.com/premium-photo/delicious-grilled-hotdog-restaurant-homemade-sausage-wrapped-hot-dogs-with-cheese-corn-banner-menu-recipe-place-text-top-view_114941-2399.jpg', price: 379, title: 'Хот-дог с беконом', weight: 350, category: 'Хот-доги' },
+    { id: 21, image: 'https://img.freepik.com/premium-photo/delicious-grilled-hotdog-restaurant-homemade-sausage-wrapped-hot-dogs-with-cheese-corn-banner-menu-recipe-place-text-top-view_114941-2399.jpg', price: 329, title: 'Хот-дог с карамелизированным луком', weight: 340, category: 'Хот-доги' },
+    { id: 22, image: 'https://img.freepik.com/premium-photo/delicious-grilled-hotdog-restaurant-homemade-sausage-wrapped-hot-dogs-with-cheese-corn-banner-menu-recipe-place-text-top-view_114941-2399.jpg', price: 399, title: 'Хот-дог с чили', weight: 360, category: 'Хот-доги' },
+    { id: 23, image: 'https://veranda-vkusa.ru/storage/2024/12/img_4692_mgfuw8ue0l_resized.jpg', price: 799, title: 'Комбо: бургер + фри', weight: 670, category: 'Комбо' },
+    { id: 24, image: 'https://veranda-vkusa.ru/storage/2024/12/img_4692_mgfuw8ue0l_resized.jpg', price: 899, title: 'Комбо: пицца + кола', weight: 850, category: 'Комбо' },
+    { id: 25, image: 'https://veranda-vkusa.ru/storage/2024/12/img_4692_mgfuw8ue0l_resized.jpg', price: 749, title: 'Комбо: хот-дог + фри', weight: 620, category: 'Комбо' },
+    { id: 26, image: 'https://veranda-vkusa.ru/storage/2024/12/img_4692_mgfuw8ue0l_resized.jpg', price: 799, title: 'Комбо: шаурма + напиток', weight: 700, category: 'Комбо' },
+    { id: 27, image: 'https://veranda-vkusa.ru/storage/2024/12/img_4692_mgfuw8ue0l_resized.jpg', price: 749, title: 'Комбо: бургер + напиток', weight: 650, category: 'Комбо' },
+    { id: 28, image: 'https://cdn-by.foodpicasso.com/assets/2024/08/27/3ed436514b4bf8520b2f71dfc2cc9d83---jpg_1000x_103c0_convert.jpg', price: 399, title: 'Шаурма классическая', weight: 480, category: 'Шаурма' },
+    { id: 29, image: 'https://cdn-by.foodpicasso.com/assets/2024/08/27/3ed436514b4bf8520b2f71dfc2cc9d83---jpg_1000x_103c0_convert.jpg', price: 449, title: 'Шаурма по-кавказски', weight: 500, category: 'Шаурма' },
+    { id: 30, image: 'https://cdn-by.foodpicasso.com/assets/2024/08/27/3ed436514b4bf8520b2f71dfc2cc9d83---jpg_1000x_103c0_convert.jpg', price: 479, title: 'Шаурма XXL', weight: 600, category: 'Шаурма' },
+    { id: 31, image: 'https://cdn-by.foodpicasso.com/assets/2024/08/27/3ed436514b4bf8520b2f71dfc2cc9d83---jpg_1000x_103c0_convert.jpg', price: 359, title: 'Шаурма с сыром', weight: 450, category: 'Шаурма' },
+    { id: 32, image: 'https://cdn-by.foodpicasso.com/assets/2024/08/27/3ed436514b4bf8520b2f71dfc2cc9d83---jpg_1000x_103c0_convert.jpg', price: 389, title: 'Шаурма с грибами', weight: 470, category: 'Шаурма' },
+    { id: 33, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', price: 699, title: 'Пицца Пепперони', weight: 600, category: 'Пицца' },
+    { id: 34, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', price: 649, title: 'Пицца Маргарита', weight: 580, category: 'Пицца' },
+    { id: 35, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', price: 749, title: 'Пицца Четыре сыра', weight: 620, category: 'Пицца' },
+    { id: 36, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', price: 799, title: 'Пицца с ветчиной и грибами', weight: 640, category: 'Пицца' },
+    { id: 37, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', price: 399, title: 'Мини пицца', weight: 300, category: 'Пицца' },
+    { id: 38, image: 'https://zira.uz/wp-content/uploads/2022/06/lapsha-vok-s-kuricey.jpg', price: 499, title: 'Вок с курицей', weight: 400, category: 'Вок' },
+    { id: 39, image: 'https://zira.uz/wp-content/uploads/2022/06/lapsha-vok-s-kuricey.jpg', price: 449, title: 'Вок с овощами', weight: 380, category: 'Вок' },
+    { id: 40, image: 'https://zira.uz/wp-content/uploads/2022/06/lapsha-vok-s-kuricey.jpg', price: 529, title: 'Вок с говядиной', weight: 420, category: 'Вок' },
+    { id: 41, image: 'https://zira.uz/wp-content/uploads/2022/06/lapsha-vok-s-kuricey.jpg', price: 519, title: 'Вок с креветками', weight: 430, category: 'Вок' },
+    { id: 42, image: 'https://zira.uz/wp-content/uploads/2022/06/lapsha-vok-s-kuricey.jpg', price: 479, title: 'Вок с тофу', weight: 390, category: 'Вок' },
+    { id: 43, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 299, title: 'Тирамису', weight: 150, category: 'Десерты' },
+    { id: 44, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 329, title: 'Чизкейк', weight: 170, category: 'Десерты' },
+    { id: 45, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Брауни', weight: 180, category: 'Десерты' },
+    { id: 46, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 269, title: 'Мини чизкейк', weight: 120, category: 'Десерты' },
+    { id: 47, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 329, title: 'Клубничный молочный коктейль', weight: 300, category: 'Десерты' },
+    { id: 48, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 199, title: 'Молочный коктейль', weight: 300, category: 'Десерты' },
+    { id: 49, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 359, title: 'Пудинг с карамелью', weight: 200, category: 'Десерты' },
+    { id: 50, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 389, title: 'Фруктовый салат', weight: 250, category: 'Десерты' },
+    { id: 51, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Маффин с черникой', weight: 160, category: 'Десерты' },
+    { id: 52, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 379, title: 'Шоколадный мусс', weight: 180, category: 'Десерты' },
+    { id: 53, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 309, title: 'Яблочный пирог', weight: 220, category: 'Десерты' },
+    { id: 54, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 279, title: 'Блинчики с творогом', weight: 200, category: 'Десерты' },
+    { id: 55, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 329, title: 'Мороженое ванильное', weight: 180, category: 'Десерты' },
+    { id: 56, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 369, title: 'Мороженое с шоколадом', weight: 200, category: 'Десерты' },
+    { id: 57, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 339, title: 'Торт Наполеон', weight: 250, category: 'Десерты' },
+    { id: 58, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 319, title: 'Панакота', weight: 190, category: 'Десерты' },
+    { id: 59, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Эклеры', weight: 180, category: 'Десерты' },
+    { id: 60, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 399, title: 'Торт Прага', weight: 270, category: 'Десерты' },
+    { id: 61, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 419, title: 'Торт Медовик', weight: 260, category: 'Десерты' },
+    { id: 62, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 289, title: 'Маффин с шоколадом', weight: 150, category: 'Десерты' },
+    { id: 63, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 359, title: 'Кекс с изюмом', weight: 170, category: 'Десерты' },
+    { id: 64, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 399, title: 'Карамельный торт', weight: 240, category: 'Десерты' },
+    { id: 65, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 319, title: 'Мусс из манго', weight: 180, category: 'Десерты' },
+    { id: 66, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 289, title: 'Фруктовый йогурт', weight: 200, category: 'Десерты' },
+    { id: 67, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Кокосовый пудинг', weight: 210, category: 'Десерты' },
+    { id: 68, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 379, title: 'Торт Черный лес', weight: 280, category: 'Десерты' },
+    { id: 69, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 299, title: 'Крем-брюле', weight: 160, category: 'Десерты' },
+    { id: 70, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 329, title: 'Лимонный тарт', weight: 170, category: 'Десерты' },
+    { id: 71, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 289, title: 'Йогуртовый десерт', weight: 150, category: 'Десерты' },
+    { id: 72, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 399, title: 'Торт Зебра', weight: 260, category: 'Десерты' },
+    { id: 73, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Клубничный тарт', weight: 200, category: 'Десерты' },
+    { id: 74, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 369, title: 'Кекс с бананом', weight: 180, category: 'Десерты' },
+    { id: 75, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 409, title: 'Шоколадный кекс', weight: 190, category: 'Десерты' },
+    { id: 76, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 289, title: 'Вишневый пирог', weight: 210, category: 'Десерты' },
+    { id: 77, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 319, title: 'Персиковый тарт', weight: 200, category: 'Десерты' },
+    { id: 78, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 349, title: 'Апельсиновый пирог', weight: 230, category: 'Десерты' },
+    { id: 79, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 379, title: 'Миндальный кекс', weight: 220, category: 'Десерты' },
+    { id: 80, image: 'https://www.italieonline.eu/img/t1100h0/blogimg/ostatni/tiramisu.jpg', price: 399, title: 'Торт Муравейник', weight: 240, category: 'Десерты' }
+];
+
+export default fastFoodData;
