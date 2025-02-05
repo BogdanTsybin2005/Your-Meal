@@ -7,11 +7,15 @@ import Pizza from "../assets/svg/Pizza";
 import Wok from "../assets/svg/Wok";
 import Desserts from "../assets/svg/Desserts";
 import Ketchup from "../assets/svg/Ketchup";
-import {FC, ReactNode} from "react";
 
 
+type FoodCategoryType = {
+    id: number, 
+    title: string, 
+    image: React.FC
+}
 
-const allFoodCategory: {id: number, title: string, image: FC<ReactNode>}[] = [
+const allFoodCategory: FoodCategoryType[] = [
     {
         id: 1,
         title: 'Бургеры',
@@ -54,11 +58,10 @@ const allFoodCategory: {id: number, title: string, image: FC<ReactNode>}[] = [
     },
     {
         id: 9,
-        title: 'Десерты',
+        title: 'Соусы',
         image: Ketchup
     },
 ]
 
 
 export default allFoodCategory;
-

@@ -1,0 +1,16 @@
+.main-section {
+    padding: 0 30px;
+}
+.main-body-content {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .main-body-content {
+        flex-direction: column;
+    }
+    .main-section {
+        padding: 0;
+    }
+}

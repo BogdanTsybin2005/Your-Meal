@@ -1,0 +1,39 @@
+.main-categories-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+    overflow-x: auto;
+    gap: 24px;
+}
+.main-category-button {
+    border: 0;
+    border-radius: 50px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 3px rgb(237, 232, 232);
+    transition-duration: .3s;
+
+    &:hover {
+        border: 2px solid #F86310;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.__active {
+        background: #FFAB08;
+        border: 2px solid #FFAB08;
+    }
+    span {
+        font-size: 12px;
+    }
+}
