@@ -1,17 +1,24 @@
 import './MainSection.scss';
+import { useState, useEffect } from 'react';
 import allFoodCategory from '../../data/categories';
 import fastFoodData from '../../data/FastFoodData';
 import CategoryList from './CategoryList/CategoryList';
 import FastFoodList from './FastFoodList/FastFoodList';
-import { useState } from 'react';
+import { OrderForDataStructure } from './FastFoodList/FastFoodList';
+import OrderList from './OrderList/OrderList';
+
+
 
 export default function MainSection() {
     const [selectedCategory, setSelectedCategory] = useState('Бургеры');
+    const [orderList, setOrderList] = useState<OrderForDataStructure[]>([]);
+    const [filteredData, setFilteredData] = useState(fastFoodData.filter(item => item.category === 'Бургеры'));
 
-    const filteredData = selectedCategory === 'Бургеры'
-        ? fastFoodData.filter(item => item.category === 'Бургеры')
-        : fastFoodData.filter(item => item.category === selectedCategory);
-
+    useEffect(() => {
+        const newFilteredData = fastFoodData.filter(item => item.category === selectedCategory);
+        setFilteredData(newFilteredData);
+    }, [selectedCategory]);
+    
     return (
         <div className='main-section'>
             <CategoryList 
@@ -19,17 +26,19 @@ export default function MainSection() {
                 onCategorySelect={setSelectedCategory} 
                 selectedCategory={selectedCategory} 
             />
-
             <div className="main-body-content">
-                <aside className='main-food-basket'>
-                    <div className="main-food-basket-bloc">
-                        <h2 className="main-food-basket-title">Корзина</h2>
-                        <span className="main-food-basket-counter">4</span>
-                    </div>
-                </aside>
-                <FastFoodList data={filteredData} />
-            </div>
+                <OrderList data={orderList} upgradeOrderList={setOrderList} />
 
+                <FastFoodList 
+                    data={filteredData} 
+                    allOrders={orderList} 
+                    upgradeOrderList={(updateFunc) => {
+                        setOrderList((prevOrders) => {
+                            return updateFunc(prevOrders);;
+                        });
+                    }}
+                />
+            </div>
         </div>
     );
 }

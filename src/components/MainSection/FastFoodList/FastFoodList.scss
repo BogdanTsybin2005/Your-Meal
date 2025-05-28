@@ -7,7 +7,7 @@
 }
 
 .main-fastfood-card {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     display: flex;
     flex-direction: column;
     border-radius: 18px;
@@ -21,7 +21,7 @@
 .main-fastfood-text-info {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     flex: 1 1 auto;
 
     div {
@@ -59,6 +59,7 @@
 
 .main-fast-food-weight {
     color: #B1B1B1;
+    margin-bottom: 10px;
 }
 
 
@@ -69,9 +70,6 @@
     }
     .main-fastfood-list {
         gap: 10px;
-    }
-    .main-base-category-title {
-        padding: 0 15px;
     }
     .main-fastfood-price, .main-fastfood-title {
         font-size: 16px;
@@ -92,5 +90,17 @@
 @media (max-width: 444px) {
     .main-fastfood-card {
         flex: 1 0 135px;
+    }
+}
+
+@media (max-width: 924px) {
+    .main-base-category-title {
+        padding: 50px 15px 0 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-fastfood-list {
+        padding: 0;
     }
 }

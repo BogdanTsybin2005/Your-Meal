@@ -1,14 +1,23 @@
 .main-section {
-    padding: 0 30px;
+    margin-bottom: 75px;
 }
 .main-body-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    max-width: 1400px;
+    margin: 75px auto 0 auto;
+
+    & > div {
+        align-self: stretch;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 924px) {
     .main-body-content {
         flex-direction: column;
+        margin: 0 auto;
+        padding: 15px;
     }
     .main-section {
         padding: 0;
