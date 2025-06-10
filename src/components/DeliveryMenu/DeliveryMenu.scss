@@ -33,12 +33,12 @@
 
     &.__opened {
         transform: translateY(-100%);
-        opacity: 0;
+        opacity: 1;
         pointer-events: none;
     }
     &.__closed {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 0;
         pointer-events: all;
     }
 }
