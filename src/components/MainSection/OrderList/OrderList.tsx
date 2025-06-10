@@ -90,7 +90,10 @@ const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => 
                                     {data.reduce((total, item) => total + item.price * item.quantity, 0)} сом
                                 </p>
                             </div>
-                            <Button className={'main-order-button'} onClick={() => openMenu()}>
+                            <Button className={'main-order-button'} onClick={() => {
+                                 openMenu();
+                                 document.body.style.overflow = 'hidden';
+                            }}>
                                 Оформить заказ
                             </Button>
                             <div className="main-food-list-delivery-block">

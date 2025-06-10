@@ -56,7 +56,10 @@ export default function DeliveryMenu(props: {isOpen: boolean; onClose: () => voi
                     <img src={DeliveryPicture} alt="delivery picture" />
                 </div>
                 <div className="delivery-menu-form-block">
-                    <button className='delivery-close-menu-button' onClick={onClose}></button>
+                    <button type="button" className='delivery-close-menu-button' onClick={() => {
+                        onClose();
+                        document.body.style.overflow = 'auto';
+                    }}></button>
                     <h2 className="delivery-menu-title">Доставка</h2>
                     <form action="#">
                         {renderInput('name', 'Ваше имя')}
