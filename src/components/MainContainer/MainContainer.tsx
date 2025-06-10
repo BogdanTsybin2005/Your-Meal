@@ -1,12 +1,19 @@
 import './MainContainer.scss';
 import burgerImage from '../../assets/pic.png';
-import { memo } from 'react';
+import { useState, memo } from 'react';
+import DeliveryMenu from '../DeliveryMenu/DeliveryMenu';
+
 
 
 
 function MainContainer() {
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
     return (
         <div className="main-body">
+            {isMenuOpen && (
+                <DeliveryMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+            )}
             <div className="main-elipse"></div>
             <div className="main-container">
                 <img src={burgerImage} alt="img" />
@@ -25,3 +32,4 @@ function MainContainer() {
 
 
 export default memo(MainContainer);
+

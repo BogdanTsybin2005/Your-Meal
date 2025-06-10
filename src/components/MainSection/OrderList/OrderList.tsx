@@ -1,6 +1,8 @@
 import './OrderList.scss';
 import React, { useState, memo } from 'react';
 import Button from "../../Button/Button";
+import DeliveryIcon from '../../../assets/delivery-icon.png'
+
 
 
 
@@ -20,13 +22,16 @@ type DataOrderType = {
 
 const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => {
     const [isOrderListHidden, setIsOrderListHidden] = useState(false);
+    const totalAmount = data.map(item => item.quantity).reduce((start, item) => start + item, 0)
+    
+    
 
     return (
         <>
             <aside className={`main-food-basket ${data.length === 0 ? 'border-bottom-radius' : ''}`}>
                 <div className="main-food-basket-block" onClick={() => setIsOrderListHidden(!isOrderListHidden)}>
                     <h2 className="main-food-basket-title">Корзина</h2>
-                    <span className="main-food-basket-counter">{data.length}</span>
+                    <span className="main-food-basket-counter">{totalAmount}</span>
                 </div>
                 {data.length > 0 && <div className="main-food-basket-decorative-line" />}
                 {data.length === 0 ? (
@@ -87,6 +92,10 @@ const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => 
                             <Button className={'main-order-button'} onClick={() => console.log('click')}>
                                 Оформить заказ
                             </Button>
+                            <div className="main-food-list-delivery-block">
+                                <img src={DeliveryIcon} alt="delivery icon" width={24} height={24}/>
+                                <p>Бесплатная доставка</p>
+                            </div>
                         </div>
                     </div>
                 )}
