@@ -43,7 +43,7 @@ const FastFoodList: React.FC<FastFoodListProps> = ({data, upgradeOrderList}) => 
                             </div>
                             <div className="main-fastfood-text-info">
                                 <div>
-                                    <h2 className="main-fastfood-price">{item.price}₽</h2>
+                                    <h2 className="main-fastfood-price">{item.price} сом</h2>
                                     <p className="main-fastfood-title">{item.title}</p>
                                 </div>
                                 <div>

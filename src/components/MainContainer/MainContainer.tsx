@@ -1,18 +1,20 @@
 import './MainContainer.scss';
 import burgerImage from '../../assets/pic.png';
-import { useState, memo } from 'react';
+import { memo } from 'react';
 import DeliveryMenu from '../DeliveryMenu/DeliveryMenu';
+import useDeliveryMenuStore from '../../store/useDeliveryMenuStore';
 
 
 
 
 function MainContainer() {
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const isDeliveryMenuOpened = useDeliveryMenuStore(state => state.isMenuOpened);
+    const closeMenu = useDeliveryMenuStore(state => state.closeMenu);
 
     return (
         <div className="main-body">
-            {isMenuOpen && (
-                <DeliveryMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+            {isDeliveryMenuOpened && (
+                <DeliveryMenu isOpen={isDeliveryMenuOpened} onClose={() => closeMenu()} />
             )}
             <div className="main-elipse"></div>
             <div className="main-container">
@@ -22,7 +24,7 @@ function MainContainer() {
                         <span>Только самые</span>
                         <span>сочные бургеры!</span>
                     </h1>
-                    <p className="main-delivery-text">Бесплатная доставка от 599₽</p>
+                    <p className="main-delivery-text">Бесплатная доставка от 599 сом</p>
                 </div>
             </div>
         </div>

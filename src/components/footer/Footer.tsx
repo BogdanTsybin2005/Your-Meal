@@ -14,8 +14,7 @@ function Footer() {
                 <div className='footer-block'>
                     <img src={footerImage} alt="footer image should be here!." />
                     <div className='footer-info'>
-                        <p>© YourMeal, 2022</p>
-                        <p>Design: Anastasia Ilina</p>
+                        <p>© YourMeal, 2025</p>
                     </div>
                 </div>
                 <div className='footer-block'>
@@ -23,7 +22,7 @@ function Footer() {
                         <h2 className='footer-title'>Номер для заказа</h2>
                         <p className='footer-phone-contacts'>
                             <PhoneIcon/>
-                            <span>+7(930)833-38-11</span>
+                            <span>+996 111 222 333</span>
                         </p>
                     </div>
                     <div>

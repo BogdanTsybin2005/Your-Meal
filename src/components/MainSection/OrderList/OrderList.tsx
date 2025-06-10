@@ -2,6 +2,7 @@ import './OrderList.scss';
 import React, { useState, memo } from 'react';
 import Button from "../../Button/Button";
 import DeliveryIcon from '../../../assets/delivery-icon.png'
+import useDeliveryMenuStore from '../../../store/useDeliveryMenuStore';
 
 
 
@@ -23,7 +24,7 @@ type DataOrderType = {
 const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => {
     const [isOrderListHidden, setIsOrderListHidden] = useState(false);
     const totalAmount = data.map(item => item.quantity).reduce((start, item) => start + item, 0)
-    
+    const openMenu = useDeliveryMenuStore(state => state.openMenu);
     
 
     return (
@@ -51,7 +52,7 @@ const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => 
                                             </span>
                                             <span>{item.weight}г</span>
                                         </div>
-                                        <span>{item.price}₽</span>
+                                        <span>{item.price} сом</span>
                                     </div>
                                 </div>
                                 <div className="main-food-basket-counter">
@@ -86,10 +87,10 @@ const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => 
                             <div className="main-food-list-total-price-block">
                                 <h2 className="main-food-list-total-price-title">Итого</h2>
                                 <p className="main-food-list-total-price">
-                                    {data.reduce((total, item) => total + item.price * item.quantity, 0)}₽
+                                    {data.reduce((total, item) => total + item.price * item.quantity, 0)} сом
                                 </p>
                             </div>
-                            <Button className={'main-order-button'} onClick={() => console.log('click')}>
+                            <Button className={'main-order-button'} onClick={() => openMenu()}>
                                 Оформить заказ
                             </Button>
                             <div className="main-food-list-delivery-block">

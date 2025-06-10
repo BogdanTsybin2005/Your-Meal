@@ -34,10 +34,12 @@
     &.__opened {
         transform: translateY(-100%);
         opacity: 0;
+        pointer-events: none;
     }
     &.__closed {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: all;
     }
 }
 .delivery-menu-body {

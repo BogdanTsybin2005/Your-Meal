@@ -4,14 +4,14 @@ import { create } from 'zustand';
 
 interface DeliveryMenuState {
     isMenuOpened: boolean;
-    toggleMenu: () => void;
+    openMenu: () => void;
+    closeMenu: () => void;
 }
 
-const useDeliveryMenuStore = create<DeliveryMenuState>((set, get) => ({
+const useDeliveryMenuStore = create<DeliveryMenuState>((set) => ({
     isMenuOpened: false,
-    toggleMenu: () => {
-        set({ isMenuOpened: !get().isMenuOpened });
-    },
+    openMenu: () => set({ isMenuOpened: true }),
+    closeMenu: () => set({ isMenuOpened: false }),
 }));
 
 export default useDeliveryMenuStore;
