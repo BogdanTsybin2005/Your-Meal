@@ -1,23 +1,30 @@
-import Wrapper from "./components/wrapper/Wrapper"
-import Header from "./components/header/Header"
-import Main from "./components/main/Main";
-import MainContainer from "./components/MainContainer/MainContainer";
-import MainSection from "./components/MainSection/MainSection";
-import Footer from "./components/footer/Footer";
+import Wrapper from './components/wrapper/Wrapper';
+import { Suspense, lazy, memo } from 'react';
+const Header = lazy(() => import('./components/header/Header'));
+const Main = lazy(() => import('./components/main/Main'));
+const MainContainer = lazy(() => import('./components/MainContainer/MainContainer'));
+const MainSection = lazy(() => import('./components/MainSection/MainSection'));
+const Footer = lazy(() => import('./components/footer/Footer'));
 import './App.scss';
 
 
 function App() {
   return (
     <Wrapper>
-      <Header/>
-      <Main>
-        <MainContainer/>
-        <MainSection/>
-      </Main>
-      <Footer/>
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Main>
+          <MainContainer />
+          <MainSection />
+        </Main>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </Wrapper>
   )
 }
 
-export default App
+export default memo(App);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import './CategoryList.scss';
 
 
@@ -16,23 +16,25 @@ type CategoryListProps = {
 };
 
 const CategoryList: React.FC<CategoryListProps> = ({ data, onCategorySelect, selectedCategory }) => {
+    const list = useMemo(() => data, [data]);
+
     return (
         <ul className="main-categories-list">
-            {data.map((item) => {
+            {list.map((item) => {
                 const CategoryIcon = item.image;
                 return (
-                <li key={item.id}>
-                    <button 
-                        className={`main-category-button ${selectedCategory === item.title ? '__active' : ''}`}
-                        onClick={() => onCategorySelect(item.title)}>
-                    <span>{item.title}</span>
-                    <CategoryIcon />
-                    </button>
-                </li>
+                    <li key={item.id}>
+                        <button
+                            className={`main-category-button ${selectedCategory === item.title ? '__active' : ''}`}
+                            onClick={() => onCategorySelect(item.title)}>
+                            <span>{item.title}</span>
+                            <CategoryIcon />
+                        </button>
+                    </li>
                 );
             })}
         </ul>
     );
 };
 
-export default CategoryList;
+export default memo(CategoryList);

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import './OrderList.scss';
+import React, { useState, memo } from 'react';
 import Button from "../../Button/Button";
 
 
@@ -18,7 +18,7 @@ type DataOrderType = {
     upgradeOrderList: (callback: (prevOrders: FoodForOrder[]) => FoodForOrder[]) => void;
 };
 
-const OrderList: React.FC<DataOrderType> = ({ data, upgradeOrderList }) => {
+const OrderList: React.FC<DataOrderType> = memo(({ data, upgradeOrderList }) => {
     const [isOrderListHidden, setIsOrderListHidden] = useState(false);
 
     return (
@@ -93,6 +93,6 @@ const OrderList: React.FC<DataOrderType> = ({ data, upgradeOrderList }) => {
             </aside>
         </>
     );
-};
+});
 
 export default OrderList;

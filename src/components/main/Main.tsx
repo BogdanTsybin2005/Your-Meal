@@ -1,4 +1,4 @@
-import {FC, ReactNode} from "react";
+import {FC, ReactNode, memo} from "react";
 import './Main.scss';
 
 
@@ -15,4 +15,4 @@ const Main: FC<MainType> = ({children}) => {
     )
 }
 
-export default Main;
+export default memo(Main);

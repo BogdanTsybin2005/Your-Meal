@@ -3,10 +3,11 @@ import Wk from '../../assets/svg/Wk';
 import Telegram from '../../assets/svg/Telegram';
 import footerImage from '../../assets/Group 7.png';
 import PhoneIcon from '../../assets/svg/PhoneIcon';
+import { memo } from 'react';
 
 
 
-export default function Footer() {
+function Footer() {
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -37,3 +38,7 @@ export default function Footer() {
         </footer>
     )
 }
+
+
+
+export default memo(Footer);

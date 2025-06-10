@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from 'react';
 import './Button.scss';
 
 
@@ -16,4 +16,4 @@ const Button: React.FC<ButtonDataType> = ({children, onClick, className}) => {
     >{children}</button>
 }
 
-export default Button;
+export default memo(Button);

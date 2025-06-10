@@ -10,7 +10,7 @@ import sauces from '../assets/sauces.jpg';
 
 
 
-type FastFoodDataType = {
+export type FastFoodDataType = {
     id: number;
     image: string;
     price: number;

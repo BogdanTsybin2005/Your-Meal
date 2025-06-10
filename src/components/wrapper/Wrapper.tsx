@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from "react";
+import React, {FC, ReactNode, memo} from "react";
 import './Wrapper.scss';
 
 
@@ -16,4 +16,4 @@ const Wrapper: FC<WrapperType> = ({children}: {children: React.ReactNode}) => {
 }
 
 
-export default Wrapper;
+export default memo(Wrapper);

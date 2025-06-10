@@ -1,9 +1,15 @@
 import './Header.scss';
 import headerLogo from '../../assets/logo.png';
+import { memo } from 'react';
 
 
-export default function Header() {
-    return <header className="header">
-                <img src={headerLogo} alt="header logo should be right here!." />
-            </header>
+
+function Header() {
+    return (
+        <header className="header">
+            <img src={headerLogo} alt="header logo should be right here!." />
+        </header>
+    )
 }
+
+export default memo(Header);

@@ -1,8 +1,10 @@
 import './MainContainer.scss';
-import burgerImage from '../../assets/pic.png'
+import burgerImage from '../../assets/pic.png';
+import { memo } from 'react';
 
 
-export default function MainContainer() {
+
+function MainContainer() {
     return (
         <div className="main-body">
             <div className="main-elipse"></div>
@@ -19,3 +21,7 @@ export default function MainContainer() {
         </div>
     )
 }
+
+
+
+export default memo(MainContainer);
